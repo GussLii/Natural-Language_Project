@@ -66,6 +66,7 @@ def predict(text, model, tokenizer, device, max_length):
             return_tensors='pt'
         )
         input_ids = encoding['input_ids'].flatten().to(device)
+        print(input_ids)
         outputs = model(input_ids)
 
         # normalize the scores to all positive and sum to 1
@@ -97,7 +98,7 @@ def evaluate_model(df, model, model_eval, tokenizer, device, max_length):
 
     return predictions, labels
 
-def evaluate_process(test_df, model, tokenizer, device, max_length):
+def initial_LSTM(tokenizer, device):
     EMBEDDING_DIM = 100
     HIDDEN_DIM = 128
     OUTPUT_DIM = 2 
@@ -105,6 +106,10 @@ def evaluate_process(test_df, model, tokenizer, device, max_length):
     VOCAB_SIZE = tokenizer.vocab_size
     model_eval = LSTMClassifier(EMBEDDING_DIM, HIDDEN_DIM, VOCAB_SIZE, OUTPUT_DIM).to(device)
     model_eval.load_state_dict(torch.load('./adversal_network/lstm_model.pth'))
+    return model_eval
+
+def evaluate_process(test_df, model, tokenizer, device, max_length):
+    model_eval = initial_LSTM(tokenizer, device)
     predictions, labels = evaluate_model(test_df, model,model_eval,tokenizer, device, max_length)
     return predictions, labels
 
