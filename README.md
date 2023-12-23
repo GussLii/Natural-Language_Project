@@ -17,6 +17,6 @@ Contact  one of the following project owners if you have new ideas or modify the
 
 Xiaoyu Yang yxy007@bu.edu
 
-Xiang Li lix3 @bu.edu
+Xiang Li lix3@bu.edu
 
 Lingwen Deng denglw@bu.edu
