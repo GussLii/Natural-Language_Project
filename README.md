@@ -9,10 +9,14 @@ and style vectors effectively. Finally, our team successfully extracted the feat
 by latent vector splitting and dual encoder methods, but we still need to make efforts to improve the
 readability of generated sentences.
 
+
+
 `collaborators`
 
 Contact  one of the following project owners if you have new ideas or modify the notebook
 
 Xiaoyu Yang yxy007@bu.edu
+
 Xiang Li lix3 @bu.edu
+
 Lingwen Deng denglw@bu.edu
